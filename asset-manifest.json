@@ -1,0 +1,33 @@
+{
+  "files": {
+    "main.css": "/project/static/css/main.c7a9a11e.chunk.css",
+    "main.js": "/project/static/js/main.ca612fec.chunk.js",
+    "main.js.map": "/project/static/js/main.ca612fec.chunk.js.map",
+    "runtime-main.js": "/project/static/js/runtime-main.c1e01555.js",
+    "runtime-main.js.map": "/project/static/js/runtime-main.c1e01555.js.map",
+    "static/js/2.3c4200a9.chunk.js": "/project/static/js/2.3c4200a9.chunk.js",
+    "static/js/2.3c4200a9.chunk.js.map": "/project/static/js/2.3c4200a9.chunk.js.map",
+    "index.html": "/project/index.html",
+    "precache-manifest.d9cb31cd53e2a152e34fe043df0e1df1.js": "/project/precache-manifest.d9cb31cd53e2a152e34fe043df0e1df1.js",
+    "service-worker.js": "/project/service-worker.js",
+    "static/css/main.c7a9a11e.chunk.css.map": "/project/static/css/main.c7a9a11e.chunk.css.map",
+    "static/js/2.3c4200a9.chunk.js.LICENSE.txt": "/project/static/js/2.3c4200a9.chunk.js.LICENSE.txt",
+    "static/media/ar-icon.svg": "/project/static/media/ar-icon.8d94767c.svg",
+    "static/media/clothes.svg": "/project/static/media/clothes.4b907907.svg",
+    "static/media/dots.svg": "/project/static/media/dots.5d14e7e5.svg",
+    "static/media/food.svg": "/project/static/media/food.8bab732c.svg",
+    "static/media/health.svg": "/project/static/media/health.e873ac6f.svg",
+    "static/media/other.svg": "/project/static/media/other.c5ab1714.svg",
+    "static/media/pet.svg": "/project/static/media/pet.dce15f4f.svg",
+    "static/media/restor.svg": "/project/static/media/restor.f3f17d8d.svg",
+    "static/media/smile.svg": "/project/static/media/smile.cbff422c.svg",
+    "static/media/transport.svg": "/project/static/media/transport.20581693.svg",
+    "static/media/utility.svg": "/project/static/media/utility.7318d4c7.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.c1e01555.js",
+    "static/js/2.3c4200a9.chunk.js",
+    "static/css/main.c7a9a11e.chunk.css",
+    "static/js/main.ca612fec.chunk.js"
+  ]
+}
