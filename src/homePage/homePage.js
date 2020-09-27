@@ -13,6 +13,7 @@ import Restoraunts from "./images/restor.svg";
 import Transport from "./images/transport.svg";
 import Utility from "./images/utility.svg";
 import Other from "./images/other.svg";
+import AddPage from "../add page/addPage";
 class HomePage extends Component {
   state = {
     char: [
@@ -24,13 +25,17 @@ class HomePage extends Component {
         health: 85,
         restoraunts: 86.57,
         transport: 51,
-        bils: 134.5,
+        bills: 134.5,
         other: 90,
       },
     ],
+
     sum: 0,
     titles: 4,
     icons: [],
+    isActive: true,
+    charge: 0,
+    ch: 0,
   };
 
   componentDidMount() {
@@ -81,20 +86,91 @@ class HomePage extends Component {
     });
   };
 
+  homePageToggle = () => {
+    this.setState({
+      isActive: !this.state.isActive,
+    });
+  };
+
+  selectCategory = (e) => {
+    const category = e.target.value;
+    this.setState((prevState) => ({
+      char: prevState.char.map((obj, i) => {
+        if (category === "fun") {
+          return Object.assign(obj, {
+            fun: prevState.char[i].fun + this.state.ch,
+          });
+        } else if (category === "pets") {
+          return Object.assign(obj, {
+            pets: prevState.char[i].pets + this.state.ch,
+          });
+        } else if (category === "food") {
+          return Object.assign(obj, {
+            food: prevState.char[i].food + this.state.ch,
+          });
+        } else if (category === "clothes") {
+          return Object.assign(obj, {
+            clothes: prevState.char[i].clothes + this.state.ch,
+          });
+        } else if (category === "health") {
+          return Object.assign(obj, {
+            health: prevState.char[i].health + this.state.ch,
+          });
+        } else if (category === "restoraunts") {
+          return Object.assign(obj, {
+            restoraunts: prevState.char[i].restoraunts + this.state.ch,
+          });
+        } else if (category === "transport") {
+          return Object.assign(obj, {
+            transport: prevState.char[i].transport + this.state.ch,
+          });
+        } else if (category === "bills") {
+          return Object.assign(obj, {
+            bills: prevState.char[i].bills + this.state.ch,
+          });
+        } else if (category === "other") {
+          return Object.assign(obj, {
+            other: prevState.char[i].other + this.state.ch,
+          });
+        }
+      }),
+    }));
+  };
+
+  chargesState = (e) => {
+    let newCharge = +e.target.value;
+    console.log(newCharge);
+    this.setState({
+      ch: newCharge,
+    });
+  };
+
   render() {
     return (
       <div className="home-page">
-        <Header sum={this.state.sum} />
-        <Menu />
-        <div className="table-cont">
-          {this.eachCharge().map((el, i) => (
-            <Table
-              charges={el}
-              title={this.state.titles[i]}
-              img={this.state.icons[i]}
-            />
-          ))}
-        </div>
+        {this.state.isActive && (
+          <>
+            <Header sum={this.state.sum} />
+            <Menu btn={this.homePageToggle} />
+            <div className="table-cont">
+              {this.eachCharge().map((el, i) => (
+                <Table
+                  charges={el}
+                  title={this.state.titles[i]}
+                  img={this.state.icons[i]}
+                />
+              ))}
+            </div>
+          </>
+        )}
+        {!this.state.isActive && (
+          <AddPage
+            sum={this.state.sum}
+            btn={this.homePageToggle}
+            value={this.chargesState}
+            select={this.selectCategory}
+          />
+        )}
       </div>
     );
   }

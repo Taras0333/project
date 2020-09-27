@@ -8,7 +8,9 @@ const Menu = (props) => (
       <span className="menu-items">Date</span>
       <span className="menu-items">Money</span>
       <span className="menu-items">Action</span>
-      <button className="menu-btn">Add more</button>
+      <button className="menu-btn" onClick={props.btn}>
+        Add more
+      </button>
     </div>
 
     <hr className="menu-line" />
