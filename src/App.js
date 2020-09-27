@@ -8,6 +8,9 @@ function App() {
     <div className="wrapper">
       <SideManu />
       <HomePage />
+      <div>
+        Website footer
+      </div>
     </div>
   );
 }
