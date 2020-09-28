@@ -14,6 +14,7 @@ import Transport from "./images/transport.svg";
 import Utility from "./images/utility.svg";
 import Other from "./images/other.svg";
 import AddPage from "../add page/addPage";
+import LandingPage from "../landingPage/index";
 class HomePage extends Component {
   state = {
     char: [
@@ -34,6 +35,7 @@ class HomePage extends Component {
     titles: 4,
     icons: [],
     isActive: true,
+    landingPage: false,
     charge: 0,
     ch: 0,
   };
@@ -139,38 +141,52 @@ class HomePage extends Component {
 
   chargesState = (e) => {
     let newCharge = +e.target.value;
-    console.log(newCharge);
     this.setState({
       ch: newCharge,
     });
   };
-
+  startToggle = () => {
+    this.setState({
+      landingPage: !this.state.landingPage,
+    });
+    this.showSideBar();
+  };
+  showSideBar = () => {
+    let bar = document.querySelector(".side-manu");
+    console.log(bar);
+    bar.style = "display: flex";
+  };
   render() {
     return (
       <div className="home-page">
-        {this.state.isActive && (
+        {this.state.landingPage && (
           <>
-            <Header sum={this.state.sum} />
-            <Menu btn={this.homePageToggle} />
-            <div className="table-cont">
-              {this.eachCharge().map((el, i) => (
-                <Table
-                  charges={el}
-                  title={this.state.titles[i]}
-                  img={this.state.icons[i]}
-                />
-              ))}
-            </div>
+            {this.state.isActive && (
+              <>
+                <Header sum={this.state.sum} />
+                <Menu btn={this.homePageToggle} />
+                <div className="table-cont">
+                  {this.eachCharge().map((el, i) => (
+                    <Table
+                      charges={el}
+                      title={this.state.titles[i]}
+                      img={this.state.icons[i]}
+                    />
+                  ))}
+                </div>
+              </>
+            )}
+            {!this.state.isActive && (
+              <AddPage
+                sum={this.state.sum}
+                btn={this.homePageToggle}
+                value={this.chargesState}
+                select={this.selectCategory}
+              />
+            )}
           </>
         )}
-        {!this.state.isActive && (
-          <AddPage
-            sum={this.state.sum}
-            btn={this.homePageToggle}
-            value={this.chargesState}
-            select={this.selectCategory}
-          />
-        )}
+        {!this.state.landingPage && <LandingPage btn={this.startToggle} />}
       </div>
     );
   }

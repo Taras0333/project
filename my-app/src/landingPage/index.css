@@ -1,0 +1,43 @@
+.red-bar {
+  width: 247px;
+  height: 100vh;
+  position: absolute;
+  background-color: red;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%);
+  top: 0;
+  background: #f1404b;
+}
+.start-btn {
+  width: 326px;
+  height: 213px;
+  position: absolute;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  margin-bottom: -50%;
+  background: #f4f5f9;
+  border: 2px solid #252c41;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  outline: none;
+}
+
+.brand-title {
+  font-family: "Roboto Slab";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 49px;
+  line-height: 118.69%;
+  /* or 58px */
+
+  text-align: center;
+  letter-spacing: 0.11em;
+
+  color: #252c41;
+}
