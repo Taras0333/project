@@ -8,6 +8,7 @@ const App = () => (
   <div className="wrapper">
     <SideManu />
     <HomePage />
+    <div>"Yebat ty loh"</div>
   </div>
 );
 
